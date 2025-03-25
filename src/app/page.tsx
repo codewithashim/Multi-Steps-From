@@ -2,9 +2,11 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>
-      
-    </div>
+    <section>
+        <h1>
+            Hey this is Codewithashim
+        </h1>
+    </section>
   )
 }
 
