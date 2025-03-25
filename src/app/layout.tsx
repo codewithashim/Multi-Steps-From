@@ -1,21 +1,18 @@
-import type { Metadata } from "next";
+"use client";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactNode } from "react";
 import "../styles/globals.scss";
 
+const queryClient = new QueryClient();
 
-export const metadata: Metadata = {
-  title: "Multi Step Form",
-  description: "A multi step form built with Next.js",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" cz-shortcut-listen="true">
+    <html lang="en" className="dark">
       <body>
-        {children}
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
       </body>
     </html>
   );
