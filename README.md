@@ -12,7 +12,7 @@ A responsive multi-step form built with Next.js, React Hook Form, Zod, and Tailw
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js (v18 or higher)
 - npm
 
 ## Installation
@@ -20,5 +20,5 @@ A responsive multi-step form built with Next.js, React Hook Form, Zod, and Tailw
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/username/multi-step-form.git
+https://github.com/codewithashim/Multi-Steps-From.git
 ```
