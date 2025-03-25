@@ -1,21 +1,35 @@
-import type { Metadata } from "next";
+"use client";
+
+import { ReactNode } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from "@/context/ThemeContext";
 import "../styles/globals.scss";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+const queryClient = new QueryClient();
 
-export const metadata: Metadata = {
-  title: "Multi Step Form",
-  description: "A multi step form built with Next.js",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" cz-shortcut-listen="true">
+    <html lang="en">
       <body>
-        {children}
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider>
+            {children}
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
+          </ThemeProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );

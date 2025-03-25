@@ -1,13 +1,9 @@
-import React from 'react'
+import FormContainer from "@/features/registration/@components/FormContainer";
 
-const HomePage = () => {
+export default function Home() {
   return (
-    <section>
-        <h1>
-            Hey this is Codewithashim
-        </h1>
-    </section>
-  )
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
+      <FormContainer />
+    </main>
+  );
 }
-
-export default HomePage;
